@@ -1,0 +1,25 @@
+<?php $__env->startSection('content'); ?>
+	<form action="<?php echo URL::route('account-sign-in-post'); ?>" method="post">
+		
+		<div class="field">
+			Email: <input type="text" name="email" <?php echo (Input::old('email') ? ' value="' . Input::old('email') . '"' : ''); ?>>
+			<?php if($errors->has('email')): ?>
+				<div style="display:inline-block; background-color: pink;"><?php echo $errors->first('email'); ?></div>
+			<?php endif; ?>
+		</div>
+		<div class="field">
+			Password: <input type="password" name="password">
+			<?php if($errors->has('password')): ?>
+				<div style="display:inline-block; background-color: pink;"><?php echo $errors->first('password'); ?></div>
+			<?php endif; ?>
+		</div>
+		<div class="field">
+			<input type="checkbox" name="remember" id="remember">
+			<label for="remember">Remember me</label>
+		</div>
+		<input type="submit" value="Sign in">
+		<?php echo Form::token(); ?>
+
+	</form>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

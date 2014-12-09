@@ -1,0 +1,72 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="newsfeed-container">
+		
+		<div class="alert alert-success" role="alert">Registration</div>
+
+		<form class="form-horizontal" action="<?php echo URL::route('account-create-post'); ?>" method="post" role="form">
+			
+			<div class="form-group <?php echo $errors->has('email') ? 'has-error' : ''; ?>">
+				<label for="email" class="col-sm-2 control-label">Email</label>
+				<div class="col-sm-8">
+					<input type="text" name="email" class="form-control" id="inputError" <?php echo (Input::old('email') ? 'value="' . Input::old('email') . '"' : ''); ?>>
+
+					<?php if($errors->has('email')): ?>
+						<span class="help-inline" role="alert"><?php echo $errors->first('email'); ?></span>
+					<?php endif; ?>
+
+				</div>
+			</div>
+
+			<div class="form-group <?php echo $errors->has('username') ? 'has-error' : ''; ?>">
+				<label for="useername" class="col-sm-2 control-label">Username</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="username" <?php echo (Input::old('username') ? ' value="' . e(Input::old('username')) . '"' : ''); ?>>
+
+					<?php if($errors->has('username')): ?>
+						<span class="help-inline" role="alert"><?php echo $errors->first('username'); ?></span>
+					<?php endif; ?>
+
+				</div>
+			</div>
+
+			<div class="form-group <?php echo $errors->has('password') ? 'has-error' : ''; ?>">
+				<label for="password" class="col-sm-2 control-label">Password</label>
+				<div class="col-sm-8">
+					<input type="password" name="password" class="form-control" id="inputError">
+
+					<?php if($errors->has('password')): ?>
+						<span class="help-inline" role="alert"><?php echo $errors->first('password'); ?></span>
+					<?php endif; ?>
+
+				</div>
+			</div>
+
+			<div class="form-group <?php echo $errors->has('password_again') ? 'has-error' : ''; ?>">
+				<label for="password" class="col-sm-2 control-label">Password</label>
+				<div class="col-sm-8">
+					<input type="password" name="password_again" class="form-control" id="inputError">
+
+					<?php if($errors->has('password_again')): ?>
+						<span class="help-inline" role="alert"><?php echo $errors->first('password_again'); ?></span>
+					<?php endif; ?>
+
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-default">Create account</button>
+				</div>
+			</div>
+
+			<?php echo Form::token(); ?>
+
+
+		</form>
+
+	</div>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

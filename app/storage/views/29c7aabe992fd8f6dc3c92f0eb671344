@@ -1,0 +1,46 @@
+<?php $__env->startSection('content'); ?>
+	
+
+
+
+<div class="newsfeed-container">
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h2 class="panel-title">Results for "<?php echo $term; ?>"</h2>
+	  </div>
+	  <div class="panel-body">
+	  <?php if($users->first()): ?>
+	  	<?php foreach($users as $user): ?>
+
+			<?php if($user->id == Auth::user()->id): ?>
+				<?php continue; ?>
+			<?php endif; ?>
+
+			<div class="row">
+				<div class="col-md-2"><a href="<?php echo URL::route('profile-user', array('username' => $user->username)); ?>"><?php echo $user->username; ?></a></div>
+				<div class="col-md-5"><?php echo $user->email; ?></div>
+				<?php /*<div class="col-md-2"><button class="btn btn-default">View more</button></div>*/ ?>
+				<div class="col-md-2"><a href="<?php echo URL::route('profile-user', array('username' => $user->username)); ?>" class="btn btn-default" role="button">View more</a></div>
+				<?php if(in_array($user->id, $friends)): ?>
+					<div class="col-md-3"><a href="<?php echo URL::route('remove-from-friend-list', array('friend_id' => $user->id)); ?>" class="btn btn-default" role="button">Remove from friends</a></div>
+				<?php else: ?>
+					<div class="col-md-3"><a href="<?php echo URL::route('add-to-friend-list', array('friend_id' => $user->id)); ?>" class="btn btn-default" role="button">Add to friends</a></div>
+				<?php endif; ?>
+				
+			</div>
+
+			<hr>
+
+	  	<?php endforeach; ?>
+	  <?php else: ?>
+		<div class="row">
+			<div class="alert alert-danger" role="alert" style="margin-left: 20px; margin-right: 20px;">There is no results for term you have searched for!</div>
+		</div>
+	  <?php endif; ?>
+	  </div>
+	</div>
+</div>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

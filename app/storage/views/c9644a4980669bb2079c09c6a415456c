@@ -1,0 +1,65 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="single-pet-container" ng-app="myPet" ng-controller="single-pet-controller" explicit-value="<?php echo $pet->id; ?>">
+
+		<?php /* <pre><% data %></pre> */ ?>
+	<?php if($likeable): ?>
+		<button ng-hide='data.isLiked' type="button" class="btn btn-default" ng-click='likePet()'>
+		  <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+		</button>
+
+		<button ng-show='data.isLiked' type="button" class="btn btn-default" ng-click='unlikePet()'>
+		  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+		</button>
+	<?php endif; ?>
+		<a href="mailto:<?php echo $pet->user->email; ?>">
+		<button type="button" class="btn btn-default">
+		  <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+		</button></a>
+
+
+		<h1><?php echo $pet->name; ?></h1>
+		<?php /*<pre><?php echo $pet; ?></pre>*/ ?>
+
+		<strong>Owner :</strong> <a href="<?php echo URL::route('profile-user', array('username' => $pet->user->username)); ?>"><?php echo $pet->user->username; ?></a> <br>
+		<strong>Specie :</strong> <?php echo $pet->specie->name; ?> <br>
+		<strong>Breed :</strong> <?php echo $pet->breed; ?> <br>
+		<strong>State :</strong> <?php echo $pet->state; ?> <br>
+		<strong>City :</strong> <?php echo $pet->city; ?> <br>
+		<strong>Birthdate :</strong> <?php echo $pet->birthDate; ?>
+
+	</div>
+
+	<div class="single-pet-profile-image-container">
+		<img src="<?php echo URL::asset($pet->profileImage->location); ?>" width="358px" height="" alt="">
+	</div>
+
+
+
+	<p class="clear"></p>
+
+
+
+	<div class="newsfeed-container">
+
+		<hr>
+
+		<h2>Photos</h2>
+
+		<div class="row">
+			<?php foreach($pet->images as $image): ?>
+			<div class="col-md-4">
+				<div class="photo-container">
+					<img src="<?php echo URL::asset($image->location); ?>" width="234px" alt="">
+				</div>
+			</div>
+			<?php endforeach; ?>
+		</div>
+
+		<hr>
+
+	</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
