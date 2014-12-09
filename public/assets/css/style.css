@@ -1,0 +1,280 @@
+body {
+	background-color: #D8D8D8;
+}
+
+.gray-back {
+	background-color: #F1F1F1;
+}
+
+.content-left {
+	width: 840px;
+	min-height: 1000px;
+	background-color: #FFFFFF;
+	border-radius: 4px;
+	box-shadow: 1px 1px 3px #c5c5c5;
+	float: left;
+}
+
+.newsfeed-container {
+	/*padding: 20px;*/
+	margin: 20px;
+	background-color: #FFFFFF;
+}
+
+.home-left {
+	float: left;
+	width: 580px;
+	min-height: 1300px;
+}
+
+.home-right {
+	float: right;
+	width: 200px;
+}
+
+.single-pet-container {
+	margin: 20px;
+	margin-left: 35px;
+	padding: 10px;
+	background-color: #FFFFFF;
+	width: 350px;
+	float: left;
+	border: 1px solid lightblue;
+	border-radius: 8px;
+}
+
+.homepage-pet-container {
+	display: inline-block;
+/*	border: 1px solid gray;*/
+	width: 100%;
+	padding-top: 10px;
+}
+
+.single-pet-profile-image-container {
+	float: right;
+	padding: 10px;
+	width: 380px;
+	/*height: 300px;*/
+	/*background-color: yellow;*/
+	margin-top: 20px;
+	margin-right: 35px;
+	border: 1px solid lightblue;
+	border-radius: 8px;
+}
+
+.photo-container {
+	border: 1px solid lightblue;
+	border-radius: 7px;
+	padding: 5px;
+	margin-bottom: 15px;
+}
+
+.post-container {
+	position: relative;
+	background-color: #F0F7FA;
+	border-radius: 5px;
+	border: 0px solid #49afcd;
+	/*min-height: 200px;*/
+}
+
+.post-header {
+	height: 45px;
+	width: 98%;
+	padding-top: 5px;
+	margin-left: 1%;
+	margin-right: 1%;
+}
+
+.post-content {
+	width: 98%;
+	margin-left: 1%;
+	margin-right: 1%;
+	margin-top: 10px;
+	padding: 10px;
+	padding-bottom: 80px;
+	border-top: 1px solid #d4edf7;
+}
+
+.profile-name {
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.post-time {
+	float: right;
+	color: gray;
+	font-size: small;
+}
+
+.post-control {
+	position: absolute;
+	bottom: 5px;
+	height: 50px;
+	width: 98%;
+	left: 1%;
+	right: 1%;
+	border-top: 1px solid #d4edf7;
+}
+
+.post-control-buttons {
+	display: inline-block;
+	float: left;
+	margin-left: 20px;
+	padding-top: 10px;
+}
+
+.pet-container {
+	/*position: relative;*/
+	background-color: #F0F7FA;
+	height: 230px;
+	border-radius: 5px;
+	border: 0px solid #49afcd;
+	margin-bottom: 20px;
+}
+
+.each-pet-left {
+
+	margin-left: 10px;
+	float: left;
+
+}
+
+.each-pet-right {
+
+	/*margin-right: 10px;*/
+	float: right;
+
+}
+
+.new-pet-container {
+	margin-top: 50px;
+	width: 70%;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+.pet-preview-picture {
+	width: 80%;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+
+.content-right {
+	width: 250px;
+	min-height: 500px;
+	background-color: red;
+	float: right;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	background-color: blue;
+	min-height: 50px;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  background: red;
+  cursor: inherit;
+  display: block;
+}
+input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+}
+
+.my-drop-zone {
+	border: dotted 3px lightgray;
+}
+
+.nv-file-over {
+	border: dotted 3px red;
+}
+
+.another-file-over-class {
+	border: dotted 3px green;
+}
+
+canvas {
+	background-color: #f3f3f3;
+    -webkit-box-shadow: 3px 3px 3px 0 #e3e3e3;
+    -moz-box-shadow: 3px 3px 3px 0 #e3e3e3;
+    box-shadow: 3px 3px 3px 0 #e3e3e3;
+    border: 1px solid #c3c3c3;
+    height: 100px;
+    margin: 6px 0 0 6px;
+}
+
+p.clear {
+	clear: both;
+}
+
+
+.my-show-hide-animation.ng-hide-add,
+.my-show-hide-animation.ng-hide-remove {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+
+  /* remember to add this */
+  display:block!important;
+  opacity:1;
+}
+.my-show-hide-animation.ng-hide {
+  opacity:0;
+}
+
+
+.my-show-hide-animation.ng-hide-remove,
+.my-show-hide-animation.ng-hide-add {
+  /* remember, the .hg-hide class is added to element
+     when the active class is added causing it to appear
+     as hidden. Therefore set the styling to display=block
+     so that the hide animation is visible */
+  display:block!important;
+}
+
+.my-show-hide-animation.ng-hide-add {
+  -webkit-animation:0.5s hide;
+  animation:0.5s hide;
+}
+
+@keyframes hide {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-webkit-keyframes hide {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+.my-show-hide-animation.ng-hide-remove {
+  -webkit-animation:0.5s show;
+  animation:0.5s show;
+}
+
+@keyframes show {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+@-webkit-keyframes show {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+
